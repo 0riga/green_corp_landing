@@ -9,6 +9,10 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px;
+	background-color: #fff;
+	position: sticky;
+	top: 0;
+	z-index: 1;
 }
 
 .header__logo {
@@ -45,11 +49,14 @@ button:hover {
 }
 .about__image {
 	width: 500px;
+	animation: fadeInRight 2s;
   }
    
 .about__sun-image {
 	width: 100px;
 	height: 100px;
+	animation: rotation 10s linear infinite;
+	position: absolute;
   }
 .about {
 	display: flex;
@@ -159,3 +166,57 @@ footer{
 	flex-direction: column;
 	margin-bottom: 15px;
 }
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@media (max-width: 1024px) {
+	header,
+	section,
+	footer{
+	  padding: 20px;
+	}
+
+	.about h1,
+	.form h1{
+		font-size: 36px;
+		line-height: 40px;
+	}
+	.about__image{
+		width: 280px;
+	}
+	.about__sun-image{
+		width: 75px;
+		height: 75px;
+	}
+  }
+@media (max-width: 720px) {
+	.header__logo {
+		height: 20px;
+	}
+	header{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.about,
+	.form{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	footer{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.footer__container{
+		flex-direction: column;
+	}
+	.about{
+		flex-direction: column-reverse;
+	}
+
+  }
